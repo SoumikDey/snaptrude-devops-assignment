@@ -18,7 +18,7 @@ module "low_end_asg" {
   vpc_zone_identifier       = ["subnet-0b9787a45292c548f", "subnet-04de3a54ccf0f851d"]
 
   # Launch template
-  launch_template_name        = "node-asg"
+  launch_template_name        = "high-end-node-asg"
   launch_template_description = "Launch template asg"
   update_default_version      = true
 
