@@ -31,7 +31,7 @@ module "high_end_asg" {
   create_iam_instance_profile = true
   iam_role_name               = "high-end-node-asg"
   iam_role_path               = "/ec2/"
-  iam_role_description        = "IAM role example"
+  iam_role_description        = "IAM role for ASG"
   iam_role_tags = {
     CustomIamRole = "Yes"
   }
