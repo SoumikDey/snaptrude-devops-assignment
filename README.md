@@ -1,0 +1,1 @@
+# snaptrude-devops-assignment
