@@ -15,8 +15,8 @@ resource "aws_lambda_function" "change_to_high_end_target_group" {
 
   environment {
     variables = {
-      ALB_RULE_ARN     = "arn:aws:elasticloadbalancing:ap-southeast-1:167814279506:listener-rule/app/dev-snap-backend-alb/c21aa16bac5be01e/48900cbbaa7b5068/332694db298a81fc"
-      TARGET_GROUP_ARN = "arn:aws:elasticloadbalancing:ap-southeast-1:167814279506:targetgroup/high-end-node-tg/4c41b0f7f697636c"
+      ALB_RULE_ARN     = var.alb_listener_group_arn
+      TARGET_GROUP_ARN = var.high_end_target_group_arn
     }
   }
 

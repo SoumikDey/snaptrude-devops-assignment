@@ -15,7 +15,7 @@ module "low_end_asg" {
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
-  vpc_zone_identifier       = ["subnet-0b9787a45292c548f", "subnet-04de3a54ccf0f851d"]
+  vpc_zone_identifier       = var.subnet_ids
 
   # Launch template
   launch_template_name        = "high-end-node-asg"
@@ -64,11 +64,11 @@ module "low_end_asg" {
       delete_on_termination = true
       description           = "eth0"
       device_index          = 0
-      security_groups       = ["sg-0bd4033715c583e75"]
+      security_groups       = var.security_groups
     }
   ]
 
-  target_group_arns = ["arn:aws:elasticloadbalancing:ap-southeast-1:167814279506:targetgroup/low-end-node-tg/47eb294ec184ab68"]
+  target_group_arns = [ var.low_end_target_group_arn ]
 
 
   tag_specifications = [
